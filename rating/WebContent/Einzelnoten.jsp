@@ -4,14 +4,14 @@
 <!--
 	-- Dokumentation zur Datei "Einzelseiten.jsp" --
 		
-		Pfad im Portal: Login -> Startseite (Dozentensicht) -> konkreter Kurs auswÃ¤hlen -> Kursseite
+		Pfad im Portal: Login -> Startseite (Dozentensicht) -> konkreter Kurs auswählen -> Kursseite
 		
 		In dieser JSP-File wurde das "Einzelnoten" Fenster implementiert, welche der Dozent sieht, wenn er auf 
-		einer Kursseite den Einzelnoten-Button einer konkreten Gruppe auswÃ¤hlt.
+		einer Kursseite den Einzelnoten-Button einer konkreten Gruppe auswählt.
 		Das "Einzelnoten" Fenster einer Gruppe zeigt alle Gruppenmitglieder in Form einer Tabelle an. 
 		
 		Hierzu wurden die Technologien HTML, CSS, JavaScript und AJAX verwendet.
-		Das Design ist ganzheitlich durch Bootstrap und grundsÃ¤tzlichen HTML-Elementen gegeben.
+		Das Design ist ganzheitlich durch Bootstrap und grundsätzlichen HTML-Elementen gegeben.
 		Bootstrap verwendet hierzu Komponenten von JQuery.
 		
 		Implementiert wurde eine Tabelle mit den Spalten: Name, alle Kriterien, Gesamtnote, Korrekturnote und Notizbox.
@@ -48,10 +48,10 @@
 		</style>
 		
 		<!-- Einbindung von Komponenten zum Betrieb von Bootstrap 
-			Damit das Design von Bootstrap in HTML implementiert und ausgefÃ¼hrt werden kann, mÃ¼ssen verschiedene
+			Damit das Design von Bootstrap in HTML implementiert und ausgeführt werden kann, müssen verschiedene
 			Komponenten anderer Technologien eingebunden werden.
 
-			Einbindung von CSS fÃ¼r Bootstrap 
+			Einbindung von CSS für Bootstrap 
 			Die jeweiligen Komponenten sind im Ordner "CSS", im gleichen Verzeichnis wie diese Datei, abgelegt.
 		-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -96,11 +96,11 @@
 					<script>
 						function Logout(){
 							if (window.confirm ("Wollen Sie sich wirklich abmelden?") == true){
-								// TODO Logout durchfÃ¼hren
+								// TODO Logout durchführen
 							}
 						}
 					</script>
-					<!-- Bild (vielleicht noch rausnehmen?)-->
+					<!-- Bild (Ersetzen durch Männchen)-->
 					<span class="label label-default" style="font-size: 16px;">ader1012</span> 
 					<button type="button" class="btn btn-default" onclick="Logout()">Abmelden</button>
 				</div>
@@ -120,9 +120,9 @@
 					<h2>Gruppe 1: <b>HSKA TeamRating-Portal</b></h2>
 					<h3>Einzelnoten</h3>
 					<p>
-						<em>Hier sind die Einzelnoten pro Kriterium fÃ¼r diese Gruppe.
+						<em>Hier sind die Einzelnoten pro Kriterium für diese Gruppe.
 							<br><br>
-							Jede Einzelnote einer Person wurde hierbei pro Kriterium unter BerÃ¼cksichtigung der Gruppennote und der Bewertung von den restlichen Teammitgliedern mit dem implementierten Algorithmus berechnet.
+							Jede Einzelnote einer Person wurde hierbei pro Kriterium unter Berücksichtigung der Gruppennote und der Bewertung von den restlichen Teammitgliedern mit dem implementierten Algorithmus berechnet.
 							<br><br>
 							Die Gesamtnote ergibt sich aus der summierten Gewichtung der Einzelnoten.
 							<br><br>
@@ -143,8 +143,8 @@
 							<thead>
 								<tr>
 									<th>Name</th>
-									<th style="text-align: center;">QualitÃ¤t</th>
-									<th style="text-align: center;">TeamfÃ¤higkeit</th>
+									<th style="text-align: center;">Qualität</th>
+									<th style="text-align: center;">Teamfähigkeit</th>
 									<th style="text-align: center;">Kommunikation</th>
 									<th style="text-align: center;">Technische Kompetenz</th>
 									<th style="text-align: center;">Fachliche Kompetenz</th>
@@ -155,39 +155,39 @@
 								</tr>
 							</thead>
 							<tbody>
-								<!-- Einzelperson: KorrekturButton (JS Prompt Box)-->
+								<!-- Einzelperson: KorrekturButton (JS Prompt Box) FÄLLT WEG -> Ersatz durch Textbox und In Place
 								<div>
 									<script>
 										function KorrekturButton() {
-											if (window.confirm("MÃ¶chten Sie diese Note wirklich Ã¤ndern?") == true){
+											if (window.confirm("Möchten Sie diese Note wirklich ändern?") == true){
 												var newGrade = window.prompt ("Bitte geben Sie die korrigierte Note ein:","");
 												if (newGrade == null || newGrade == ""){
 													alert ("Sie haben keine Note eingegeben! Der Vorgang wurde abgebrochen.");
 												} else {
 													// TODO Datenbank-Zugriff: Schreiben in DB
-													alert ("Die Note wurde erfolgreich zu " + newGrade + " abgeÃ¤ndert.");
+													alert ("Die Note wurde erfolgreich zu " + newGrade + " abgeändert.");
 												}
 											}
 										}
 									</script>
-								</div>
+								</div> -->
 								
 								<!-- Einzelperson: Notizbox-SaveButton -->
-								<div>
+								<!-- div>
 									<script>
 										function SaveButton (){
 											// TODO Datenbank-Zugriff: Speichern der Notiz
 										}
 									</script>
-								</div>
+								</div -->
 								
-								<!-- DatensÃ¤tze -->
-								<!-- TODO Datenbank-Zugriff: Autoread der DatensÃ¤tze -->
+								<!-- Datensätze -->
+								<!-- TODO Datenbank-Zugriff: Autoread der Datensätze -->
 								<!-- Beispiel Datensatz 1 -->
 								<tr>
 									<td style="vertical-align: middle;">Michael Kurz</td>
-									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--QualitÃ¤t-->
-									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--TeamfÃ¤higkeit-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--Qualität-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--Teamfähigkeit-->
 									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--Kommunikation-->
 									<td style="text-align: center; vertical-align: middle;"><strong>3.0</strong></td> <!--Technische Kompetenz-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.3</strong></td> <!--Fachliche Kompetenz-->
@@ -208,8 +208,8 @@
 								<!-- Beispiel Datensatz 2 -->
 								<tr>
 									<td style="vertical-align: middle;">Mohamed Lezzar</td>
-									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--QualitÃ¤t-->
-									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--TeamfÃ¤higkeit-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--Qualität-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--Teamfähigkeit-->
 									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--Kommunikation-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.3</strong></td> <!--Technische Kompetenz-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--Fachliche Kompetenz-->
@@ -230,8 +230,8 @@
 								<!-- Beispiel Datensatz 3 -->
 								<tr>
 									<td style="vertical-align: middle;">Helene Hirsch</td>
-									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--QualitÃ¤t-->
-									<td style="text-align: center; vertical-align: middle;"><strong>1.0</strong></td> <!--TeamfÃ¤higkeit-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--Qualität-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.0</strong></td> <!--Teamfähigkeit-->
 									<td style="text-align: center; vertical-align: middle;"><strong>1.0</strong></td> <!--Kommunikation-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--Technische Kompetenz-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--Fachliche Kompetenz-->
@@ -252,8 +252,8 @@
 								<!-- Beispiel Datensatz 4 -->
 								<tr>
 									<td style="vertical-align: middle;">Maurice Eschelbach</td>
-									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--QualitÃ¤t-->
-									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--TeamfÃ¤higkeit-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--Qualität-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--Teamfähigkeit-->
 									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--Kommunikation-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--Technische Kompetenz-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--Fachliche Kompetenz-->
@@ -274,8 +274,8 @@
 								<!-- Beispiel Datensatz 5 -->
 								<tr>
 									<td style="vertical-align: middle;">Thomas Miller</td>
-									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--QualitÃ¤t-->
-									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--TeamfÃ¤higkeit-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--Qualität-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--Teamfähigkeit-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--Kommunikation-->
 									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--Technische Kompetenz-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--Fachliche Kompetenz-->
@@ -296,8 +296,8 @@
 								<!-- Beispiel Datensatz 6 -->
 								<tr>
 									<td style="vertical-align: middle;">Franziska Widmaier</td>
-									<td style="text-align: center; vertical-align: middle;"><strong>2.3</strong></td> <!--QualitÃ¤t-->
-									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--TeamfÃ¤higkeit-->
+									<td style="text-align: center; vertical-align: middle;"><strong>2.3</strong></td> <!--Qualität-->
+									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--Teamfähigkeit-->
 									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--Kommunikation-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.0</strong></td> <!--Technische Kompetenz-->
 									<td style="text-align: center; vertical-align: middle;"><strong>2.3</strong></td> <!--Fachliche Kompetenz-->
@@ -318,8 +318,8 @@
 								<!-- Beispiel Datensatz 7 -->
 								<tr>
 									<td style="vertical-align: middle;">Adela Mohr</td>
-									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--QualitÃ¤t-->
-									<td style="text-align: center; vertical-align: middle;"><strong>2.3</strong></td> <!--TeamfÃ¤higkeit-->
+									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--Qualität-->
+									<td style="text-align: center; vertical-align: middle;"><strong>2.3</strong></td> <!--Teamfähigkeit-->
 									<td style="text-align: center; vertical-align: middle;"><strong>3.0</strong></td> <!--Kommunikation-->
 									<td style="text-align: center; vertical-align: middle;"><strong>1.3</strong></td> <!--Technische Kompetenz-->
 									<td style="text-align: center; vertical-align: middle;"><strong>1.7</strong></td> <!--Fachliche Kompetenz-->
@@ -337,7 +337,7 @@
 										</div>
 									</td>
 								</tr>
-								<!-- weitere DatensÃ¤tze -->
+								<!-- weitere Datensätze -->
 								<!-- ... -->
 							</tbody>
 						</table>

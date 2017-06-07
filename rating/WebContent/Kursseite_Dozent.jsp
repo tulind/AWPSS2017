@@ -4,21 +4,21 @@
 <!--
 	-- Dokumentation zur Datei "Kursseite.jsp" --
 		
-		Pfad im Portal: Login -> Startseite (Dozentensicht) -> konkreter Kurs auswÃ¤hlen -> Kursseite
+		Pfad im Portal: Login -> Startseite (Dozentensicht) -> konkreter Kurs auswählen -> Kursseite
 		
 		In dieser JSP-File wurde die "Kursseite" implementiert, welche der Dozent sieht, wenn er auf 
-		seiner Startseite einen konkreten, laufenden Kurs, z.B. eBusiness, auswÃ¤hlt.
-		Die "Kursseite" eines Kurses zeigt alle Gruppen des gewÃ¤hlten Kurses in Form einer Tabelle an. 
+		seiner Startseite einen konkreten, laufenden Kurs, z.B. eBusiness, auswählt.
+		Die "Kursseite" eines Kurses zeigt alle Gruppen des gewählten Kurses in Form einer Tabelle an. 
 		
 		Hierzu wurden die Technologien HTML, CSS, JavaScript und AJAX verwendet.
-		Das Design ist ganzheitlich durch Bootstrap und grundsÃ¤tzlichen HTML-Elementen gegeben.
+		Das Design ist ganzheitlich durch Bootstrap und grundsätzlichen HTML-Elementen gegeben.
 		Bootstrap verwendet hierzu Komponenten von JQuery.
 		
 		Implementiert wurde eine Tabelle mit den Spalten: Nr., Name, Beschreibung, Gruppennote, 
-		Einzelnoten-Button (pro Zeile, bzw. Gruppe) sowie LÃ¶schen-Button (pro Zeile, bzw. Gruppe). 
+		Einzelnoten-Button (pro Zeile, bzw. Gruppe) sowie Löschen-Button (pro Zeile, bzw. Gruppe). 
 		
-		Der Einzelnoten-Button ist lediglich eine VerknÃ¼pfung zu den Einzelnoten der jeweiligen Gruppe.
-		Der LÃ¶schen-Button realisiert die MÃ¶glichkeit des LÃ¶schens einer Gruppe, bzw. Zeile.
+		Der Einzelnoten-Button ist lediglich eine Verknüpfung zu den Einzelnoten der jeweiligen Gruppe.
+		Der Löschen-Button realisiert die Möglichkeit des Löschens einer Gruppe, bzw. Zeile.
 		
 		Bei jeder GUI Komponente wurde jeweils direkt davor kommentiert, um welche Komponente es sich handelt
 		und gegebenenfalls welche Technologie im Einzelnen verwendet wurde.
@@ -50,7 +50,7 @@
 		</style>
 		
 		<!-- Einbindung von Komponenten zum Betrieb von Bootstrap 
-			Damit das Design von Bootstrap in HTML implementiert und ausgefÃ¼hrt werden kann, mÃ¼ssen verschiedene
+			Damit das Design von Bootstrap in HTML implementiert und ausgeführt werden kann, müssen verschiedene
 			Komponenten anderer Technologien eingebunden werden.
 
 			Einbindung von CSS für Bootstrap 
@@ -82,7 +82,7 @@
 				<div class="col-lg-9">
 					<div class="page-header">
 						<h1>
-							<!-- Seiten-Ãœberschrift -->
+							<!-- Seiten-Üœberschrift -->
 							TeamRating - Portal
 							<div>
 								<img alt="HSKA icon" src="https://www.iwi.hs-karlsruhe.de/intranet/images/hska-wii_rot/iwi_ci_logo25.png?usn=263662077">
@@ -90,7 +90,7 @@
 						</h1>
 					</div>
 				</div>
-				<!-- Bild (vielleicht noch rausnehmen?)-->
+				<!-- Bild (Ersetzen durch Männchen)-->
 				<div class="col-lg-1">
 					<img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" width="100px" height="100px">
 				</div>
@@ -99,11 +99,11 @@
 					<script>
 						function Logout(){
 							if (window.confirm ("Wollen Sie sich wirklich abmelden?") == true){
-								// TODO Logout durchfÃ¼hren
+								// TODO Logout durchführen
 							}
 						}
 					</script>
-					<!-- IZ-KÃ¼rzel Benutzerlabel -->
+					<!-- IZ-Kürzel Benutzerlabel -->
 					<span class="label label-default" style="font-size: 16px;">ader1012</span> 
 					<button type="button" class="btn btn-default" onclick="Logout()">Abmelden</button>
 				</div>
@@ -142,7 +142,7 @@
 				<div class="col-lg-10">
 					<h2>Kurs: <strong>AWP</strong></h2>
 					<h3>Gruppen</h3>
-					<p><em>Hier sind die aktuellen Gruppen des gewÃ¤hlten Kurses.</em></p>
+					<p><em>Hier sind die aktuellen Gruppen des gewählten Kurses.</em></p>
 						
 					<!-- responsive Tabelle -->
 					<div class="table-responsive">
@@ -155,37 +155,27 @@
 									<th>Beschreibung</th>
 									<th>Gruppennote</th>
 									<th>Einzelnoten</th>
-									<th>LÃ¶schen?</th>
+									<th>Löschen?</th>
 								</tr>
 							</thead>
 							<tbody>
 								<!-- EinzelnotenButton (JS Redirect)-->
-								<script>
+								<!-- script>
 									function EinzelnotenButton() {
 										window.location = "file:///C:/Users/Eric/Desktop/Kursfenster_Eric/Einzelnoten.html";
-										// TODO Datenbank-Zugriff: konkrete Gruppe Ã¼bergeben
+										// TODO Datenbank-Zugriff: konkrete Gruppe übergeben
 									}
-								</script>
+								</script -->
 								
-								<!-- DeleteGroupButton (JS Confirm Box)-->
-								<script>
-									function DeleteGroupButton() {
-										if (window.confirm("Wollen Sie diese Gruppe wirklich lÃ¶schen?") == true) {
-											// TODO Datenbank-Zugriff: Gruppe lÃ¶schen
-											alert ("Sie haben die Gruppe gelÃ¶scht!");
-										}
-									}
-								</script>
-								
-								<!-- DatensÃ¤tze -->
-								<!-- TODO Datenbank-Zugriff: Autoread der DatensÃ¤tze -->
+								<!-- Datensätze -->
+								<!-- TODO Datenbank-Zugriff: Autoread der Datensätze -->
 								<!-- Beispiel Datensatz 1 -->
 								<tr>
 									<td>1</td>
 									<td>HSKA TeamRating-Portal</td>
-									<td><p>Wir implementieren ein Online-Portal, welches eine transparente und faire Benotung innerhalb von Gruppenarbeiten ermÃ¶glicht.</p></td>
+									<td><p>Wir implementieren ein Online-Portal, welches eine transparente und faire Benotung innerhalb von Gruppenarbeiten ermöglicht.</p></td>
 									<td style="text-align: center; vertical-align: text-top; font-size: 16px"><strong>2.0</strong></td>
-									<td style="text-align: center; vertical-align: text-top;"><a href="Einzelnoten.html" class="btn btn-primary" onclick="EinzelnotenButton()"><span class="glyphicon glyphicon-share"></span></a></td>
+									<td style="text-align: center; vertical-align: text-top;"><a href="Einzelnoten.jsp" class="btn btn-primary" onclick="EinzelnotenButton()"><span class="glyphicon glyphicon-share"></span></a></td>
 									<td style="text-align: center; vertical-align: text-top;"><a href="#" class="btn btn-danger" onclick="DeleteGroupButton()"><span class="glyphicon glyphicon-remove"></span></a></td>
 								</tr>
 								<!-- Beispiel Datensatz 2 -->
@@ -194,35 +184,16 @@
 									<td>SmartMirror</td>
 									<td><p>Wir implementieren einen smarten Spiegel, welcher Wetterberichte, To-Do's, Erinnerungen und News anzeigt.</p></td>
 									<td style="text-align: center; vertical-align: text-top; font-size: 16px"><strong>1.7</strong></td>
-									<td style="text-align: center; vertical-align: text-top;"><a href="Einzelnoten.html" class="btn btn-primary" onclick="EinzelnotenButton()"><span class="glyphicon glyphicon-share"></span></a></td>
+									<td style="text-align: center; vertical-align: text-top;"><a href="Einzelnoten.jsp" class="btn btn-primary" onclick="EinzelnotenButton()"><span class="glyphicon glyphicon-share"></span></a></td>
 									<td style="text-align: center; vertical-align: text-top;"><a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a></td>
 								</tr>
-								<!-- weitere DatensÃ¤tze -->
+								<!-- weitere Datensätze -->
 								
 							</tbody>
 						</table>
 					</div>
-					
-					<!-- Tabellen-Footer: AddGroupButton (JS Prompt Box)-->
 					<div>
-						<script>
-							function AddGroupButton() {
-								var groupID = "";
-								var groupname = window.prompt ("Bitte geben Sie den Gruppennamen ein:","");
-								if (groupname == null || groupname == ""){
-									alert ("Sie haben keinen Gruppennamen eingegeben! Der Vorgang wurde abgebrochen.");
-								} else {
-									var groupdescription = window.prompt ("Bitte geben Sie eine Gruppenbeschreibung ein:","");
-									if (groupdescription == null || groupdescription == ""){
-										alert ("Sie haben keine Gruppenbeschreibung eingegeben! Der Vorgang wurde abgebrochen.");
-									} else {
-										alert ('Die Gruppe: "' + groupname + '" wurde erfolgreich erstellt.');
-									}
-								}
-								// TODO Datenbank-Zugriff: Schreiben in DB
-							}
-						</script>
-						<a href="#" class="btn btn-success" onclick="AddGroupButton()"><span class="glyphicon glyphicon-plus"></span> HinzufÃ¼gen</a>
+						<a href="#" class="btn btn-success" onclick="AddGroupButton()"><span class="glyphicon glyphicon-plus"></span> Hinzufügen</a>
 					</div>
 				</div>
 				<div class="col-lg-2"></div>
@@ -230,5 +201,7 @@
 		</div>
 	</div>
 	</div>
+	<!-- Kursseite_Dozent.js Einbindung -->
+	<script src="js/Kursseite_Dozent.js"></script>
 	</body>
 </html>
