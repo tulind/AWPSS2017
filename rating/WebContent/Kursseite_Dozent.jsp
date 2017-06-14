@@ -118,7 +118,7 @@
 				</ol>
 			</div>
 			<!-- MassenGruppenerstellung Dropdown Button -->
-			<div class="row">
+			<!--div class="row">
 				<div class="col-lg-9"></div>
 				<div class="col-lg-1">
 					<div class="btn-group">
@@ -136,7 +136,7 @@
 					</div>
 				</div>
 				<div class="col-lg-2"></div>
-			</div>
+			</div-->
 			<!-- Kurstabelle -->
 			<div class="row">
 				<div class="col-lg-10">
@@ -185,7 +185,7 @@
 									<td><p>Wir implementieren einen smarten Spiegel, welcher Wetterberichte, To-Do's, Erinnerungen und News anzeigt.</p></td>
 									<td style="text-align: center; vertical-align: text-top; font-size: 16px"><strong>1.7</strong></td>
 									<td style="text-align: center; vertical-align: text-top;"><a href="Einzelnoten.jsp" class="btn btn-primary" onclick="EinzelnotenButton()"><span class="glyphicon glyphicon-share"></span></a></td>
-									<td style="text-align: center; vertical-align: text-top;"><a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a></td>
+									<td style="text-align: center; vertical-align: text-top;"><a href="#" class="btn btn-danger" onclick="DeleteGroupButton()"><span class="glyphicon glyphicon-remove"></span></a></td>
 								</tr>
 								<!-- weitere Datensätze -->
 								

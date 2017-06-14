@@ -1,4 +1,6 @@
-// AddGroupButton (JS Prompt Box)
+// AddGroupButton (JS Prompt Box, XMLHttpRequest)
+//	Diese Methode fügt, unter Angabe von Gruppennamen und Beschreibung, eine neue Gruppe in den aktuellen Kurs hinzu.
+
 function AddGroupButton() {
 	var groupID = "";
 	var groupname = window.prompt ("Bitte geben Sie den Gruppennamen ein:","");
@@ -9,17 +11,36 @@ function AddGroupButton() {
 		if (groupdescription == null || groupdescription == ""){
 			alert ("Sie haben keine Gruppenbeschreibung eingegeben! Der Vorgang wurde abgebrochen.");
 		} else {
+			// XMLHttpRequest
+			var add = new XMLHttpRequest ();
+			add.onreadystatechange = function (){
+				if (this.readyState == 4 && this.status == 200){
+					// -> Lade neue Gruppe in Datenbank
+				}
+			}
+			add.open ("POST", /*"Server file location?gname=" + groupname + "&gdescr=" + groupdescription*/, true);
+			add.send(string);
 			alert ('Die Gruppe: "' + groupname + '" wurde erfolgreich erstellt.');
 		}
 	}
-	// TODO Datenbank-Zugriff: Schreiben in DB
 }
 
 
-// DeleteGroupButton (JS Confirm Box)
+// DeleteGroupButton (JS Confirm Box, XMLHttpRequest)
+// Diese Methode löscht eine Gruppe des aktuellen Kurses aus der Datenbank.
+
 function DeleteGroupButton() {
 	if (window.confirm("Wollen Sie diese Gruppe wirklich löschen?") == true) {
-		// TODO Datenbank-Zugriff: Gruppe löschen
+		// XMLHttpRequest
+		var del = new XMLHttpRequest ();
+		del.onreadystatechange = function (){
+			if (this.readyState == 4 && this.status == 200){
+				// -> lösche Datensatz der Gruppe aus Datenbank
+			}
+		};
+		del.open("POST", /*"Server file location*/, true);
+		del.send(string);
+		
 		alert ("Sie haben die Gruppe gelöscht!");
 	}
 }
